@@ -16,26 +16,42 @@ You will need:
 - Optional: USB wifi dongle to make your radio, er, wireless.
 
 First, log into your Pi at the command line. Ensure it’s connected to the internet and update it by typing
-    sudo apt-get update
+```
+sudo apt-get update
+```
 
 Then install mpd (music player daemon) and mpc (client) by typing the following:
-    sudo apt-get install mpc mpd
+```
+sudo apt-get install mpc mpd
+```
 
 Add some internet radio stations by typing this at the command line to add BBC Radio 1:
+```
 mpc add http://bbcmedia.ic.llnwd.net/stream/bbcmedia_intl_lc_radio1_p?s=1365376033&e=1365390433&h=a0fef58c2149248d6bff1f7b7b438931
+```
 
 There are more stations BBC listed here: http://thenated0g.wordpress.com/2013/06/06/raspberry-pi-add-bbc1-6-radio-streams-and-mpc-play-command/
 
 I added BBC radios 1-6, and also added US public radio NWPR and the French station Fip, leaving me with 8 stations in total. Here’s how I added Fip (it’s a super-cool French music station):
-    mpc add http://mp3.live.tv-radio.com/fip/all/fip-32k.mp3
+```
+mpc add http://mp3.live.tv-radio.com/fip/all/fip-32k.mp3
+```
+
 And for NPR try:
-    mpc add http://69.166.45.47:8000
+```
+mpc add http://69.166.45.47:8000
+```
+
 Do try and add the stations in the order you want them to cycle through – you can re-order them using mpc at the command line, but it’s much easier to get them right first time. (I didn’t).
 
 Test mpc is working by typing
-    mpc play 1
+```
+mpc play 1
+```
 at the command line, and you should hear Radio 1 (or whichever station you added first) coming out of the Pi’s headphone jack. You can adjust the volume of your sound device by typing
-    alsamixer
+```
+alsamixer
+```
 at the command line. You get a graphical mixer in the command line which is pretty intuitive.
 
 You can also adjust volume in mpc by typing:
