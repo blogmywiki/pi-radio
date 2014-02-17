@@ -19,7 +19,7 @@ prev_input = 0
 while True:
   #take a reading from pin 23
   input = GPIO.input(23)
-  #if the last reading was low and this one high, do stuff
+  #if the last reading was low and this one high, increase channel by 1
   if ((not prev_input) and input):
     # assumes you have 8 radio stations configured
     station += 1
