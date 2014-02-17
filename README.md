@@ -65,6 +65,8 @@ mpc stop
 ```
 to make the horrible noise go away.
 
+<a href="http://www.flickr.com/photos/gilesbooth/12596494545/" title="Pi-Radio schematic by gilesbooth, on Flickr"><img src="http://farm4.staticflickr.com/3750/12596494545_93777dbea0.jpg" width="500" height="329" alt="Pi-Radio schematic"></a>
+
 Using a little breadboard, connect one side of your push button to the 3.3v pin on the RaspberryPi. The other side of the switch is connected via a 1K resistor to RaspberryPi GPIO pin 23, and via a 10K resistor to a GND pin on the Pi (I used a different one in the photo to my diagram, but I don’t think it matters). You can find a good diagram of the pins here: http://elinux.org/RPi_Low-level_peripherals
 
 Now in the home directory /home/pi save radio.py. It assumes you have 8 stations set up – if you have a different number, change the 8 to the number you have.
