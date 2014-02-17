@@ -3,13 +3,13 @@ pi-radio
 
 A barebones simplest possible Raspberry Pi internet radio.
 
-This is a Python script for what I think is the simplest internet radio you can make with a Raspberry Pi. 
+This is a Python script for what I think is the simplest functional internet radio you can make with a Raspberry Pi. 
 
-You'll need to install mpc first and set up some internet radio stations.
 
 You will need:
 
 - A RaspberryPi with a fresh headless install of Raspbian – this means you set it not to boot into a graphical environment when it starts up.
+- To install the Music Player Daemon and Client mpd & mpc and configure some online radio stations.
 - A push button.
 - A 10k and a 1k ohm resistor, and some way of wiring them together (such as a breadboard) and some way of connecting 3 wires to pins on the RaspberryPi.
 - Headphones or some powered speakers.
@@ -55,11 +55,15 @@ alsamixer
 at the command line. You get a graphical mixer in the command line which is pretty intuitive.
 
 You can also adjust volume in mpc by typing:
-    mpc volume +5
+```
+mpc volume +5
+```
 or + or – any number you fancy.
 
 Then type
-    mpc stop
+```
+mpc stop
+```
 to make the horrible noise go away.
 
 Using a little breadboard, connect one side of your push button to the 3.3v pin on the RaspberryPi. The other side of the switch is connected via a 1K resistor to RaspberryPi GPIO pin 23, and via a 10K resistor to a GND pin on the Pi (I used a different one in the photo to my diagram, but I don’t think it matters). You can find a good diagram of the pins here: http://elinux.org/RPi_Low-level_peripherals
@@ -67,13 +71,19 @@ Using a little breadboard, connect one side of your push button to the 3.3v pin 
 Now in the home directory /home/pi save radio.py. It assumes you have 8 stations set up – if you have a different number, change the 8 to the number you have.
 
 Then test it by typing
-    sudo python radio.py
+```
+sudo python radio.py
+```
 at the command line. The radio should play, and when you press the button it should change up through the channels, cycling back to 1 when it passes 8.
 
 Next, to make it run at start up, type
-    sudo nano /etc/rc.local
+```
+sudo nano /etc/rc.local
+```
 and add the following line before the exit command:
-    (sleep 65; python /home/pi/radio.py)&
+```
+(sleep 65; python /home/pi/radio.py)&
+```
 The 'sleep 65' is needed because my Pi has a USB wifi dongle which takes an eternity (well, a minute) to get on the network. If your Pi is connected to the internet by ethernet, you could probably make the sleep time an awful lot shorter.
 Save it by typing ctrl-x. Reboot your Pi, and enjoy!
 
