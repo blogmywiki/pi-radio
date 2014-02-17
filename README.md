@@ -1,10 +1,9 @@
 pi-radio
 ========
 
-A barebones simplest possible Raspberry Pi internet radio.
+##A barebones Raspberry Pi internet radio
 
 This is a Python script for what I think is the simplest functional internet radio you can make with a Raspberry Pi. 
-
 
 You will need:
 
@@ -85,7 +84,7 @@ and add the following line before the exit command:
 (sleep 65; python /home/pi/radio.py)&
 ```
 The 'sleep 65' is needed because my Pi has a USB wifi dongle which takes an eternity (well, a minute) to get on the network. If your Pi is connected to the internet by ethernet, you could probably make the sleep time an awful lot shorter.
-Save it by typing ctrl-x. Reboot your Pi, and enjoy!
+Save it by typing ctrl-x. Reboot your Pi, and **enjoy**!
 
 
 
