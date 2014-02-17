@@ -67,9 +67,9 @@ to make the horrible noise go away.
 
 <a href="http://www.flickr.com/photos/gilesbooth/12596494545/" title="Pi-Radio schematic by gilesbooth, on Flickr"><img src="http://farm4.staticflickr.com/3750/12596494545_93777dbea0.jpg" width="500" height="329" alt="Pi-Radio schematic"></a>
 
-Using a little breadboard, connect one side of your push button to the 3.3v pin on the RaspberryPi. The other side of the switch is connected via a 1K resistor to RaspberryPi GPIO pin 23, and via a 10K resistor to a GND pin on the Pi (I used a different one in the photo to my diagram, but I don’t think it matters). You can find a good diagram of the pins here: http://elinux.org/RPi_Low-level_peripherals
+Using a little breadboard, connect one side of your push button to the 3.3v pin on the RaspberryPi. The other side of the switch is connected via a 1K resistor to RaspberryPi GPIO pin 23, and via a 10K resistor to a GND pin on the Pi. You can find a good diagram of the pins here: http://elinux.org/RPi_Low-level_peripherals
 
-Now in the home directory /home/pi save radio.py. It assumes you have 8 stations set up – if you have a different number, change the 8 to the number you have.
+Now save **radio.py** in the home directory /home/pi. The script assumes you have 8 stations set up – if you have a different number, change the 8 to your number of radio stations.
 
 Then test it by typing
 ```
@@ -77,7 +77,7 @@ sudo python radio.py
 ```
 at the command line. The radio should play, and when you press the button it should change up through the channels, cycling back to 1 when it passes 8.
 
-Next, to make it run at start up, type
+Next, to make it run automatically at start up, type
 ```
 sudo nano /etc/rc.local
 ```
